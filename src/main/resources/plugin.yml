@@ -2,6 +2,7 @@ name: DadJoke
 version: '0.1'
 main: com.github.justadeni.dadJoke.DadJoke
 api-version: '1.21'
+load: POSTWORLD
 commands:
   dadjoke:
     description: Tells a random dad joke.
@@ -11,5 +12,5 @@ permissions:
     default: true
     description: Allows usage of the plugin
   dadjoke.reload:
-    default: false
+    default: op
     description: Allows reloading of config

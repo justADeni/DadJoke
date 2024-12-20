@@ -3,6 +3,8 @@ package com.github.justadeni.dadJoke.config;
 import com.github.justadeni.dadJoke.DadJoke;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.util.stream.Collectors;
+
 public class Config {
 
     private static Config instance;
@@ -27,9 +29,11 @@ public class Config {
     public final String NOPERMISSION;
     public final String RELOADED;
     public final String ERROR;
+    public final boolean BROADCAST;
+    public final int FREQUENCY;
+    public final String BROADCAST_FORMAT;
     public final Sound SOUND_SUCCESS;
     public final Sound SOUND_FAILURE;
-
 
     private Config() {
         CONFIG = DadJoke.getPlugin().getConfig();
@@ -38,6 +42,9 @@ public class Config {
         NOPERMISSION = CONFIG.getString("no-permission");
         RELOADED = CONFIG.getString("reloaded");
         ERROR = CONFIG.getString("error");
+        BROADCAST = CONFIG.getBoolean("broadcast.enabled");
+        FREQUENCY = CONFIG.getInt("broadcast.frequency");
+        BROADCAST_FORMAT = String.join("\n", CONFIG.getStringList("broadcast.format"));
         SOUND_SUCCESS = new Sound("sound-success");
         SOUND_FAILURE = new Sound("sound-failure");
     }
