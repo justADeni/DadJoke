@@ -1,0 +1,15 @@
+name: DadJoke
+version: '0.1'
+main: com.github.justadeni.dadJoke.DadJoke
+api-version: '1.21'
+commands:
+  dadjoke:
+    description: Tells a random dad joke.
+
+permissions:
+  dadjoke.use:
+    default: true
+    description: Allows usage of the plugin
+  dadjoke.reload:
+    default: false
+    description: Allows reloading of config
