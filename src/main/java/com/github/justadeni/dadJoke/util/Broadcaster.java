@@ -3,7 +3,6 @@ package com.github.justadeni.dadJoke.util;
 import com.github.justadeni.dadJoke.DadJoke;
 import com.github.justadeni.dadJoke.config.Config;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -27,10 +26,7 @@ public class Broadcaster {
                         return;
 
                     String broadcast = Config.getInstance().BROADCAST_FORMAT.replace("%dadjoke%", joke);
-                    for (Player player : Bukkit.getOnlinePlayers()) {
-                        player.sendMessage(broadcast);
-                        Config.getInstance().SOUND_SUCCESS.play(player);
-                    }
+                    Bukkit.broadcast(broadcast, "dadjoke.broadcast");
                 }
             }.runTaskTimerAsynchronously(DadJoke.getPlugin(), 0L, Config.getInstance().FREQUENCY * 1200L);
         } else {

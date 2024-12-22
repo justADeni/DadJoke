@@ -6,7 +6,7 @@
 
     <groupId>com.github.justadeni</groupId>
     <artifactId>dadjoke</artifactId>
-    <version>0.3</version>
+    <version>0.5</version>
     <packaging>jar</packaging>
 
     <name>DadJoke</name>

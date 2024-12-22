@@ -11,6 +11,9 @@ permissions:
   dadjoke.use:
     default: true
     description: Allows usage of the plugin
+  dadjoke.broadcast:
+      default: true
+      description: Allows receiving broadcast
   dadjoke.reload:
     default: op
     description: Allows reloading of config

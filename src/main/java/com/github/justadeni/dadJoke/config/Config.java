@@ -3,8 +3,6 @@ package com.github.justadeni.dadJoke.config;
 import com.github.justadeni.dadJoke.DadJoke;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.util.stream.Collectors;
-
 public class Config {
 
     private static Config instance;
@@ -37,14 +35,14 @@ public class Config {
 
     private Config() {
         CONFIG = DadJoke.getPlugin().getConfig();
-        PREFIX = CONFIG.getString("prefix");
-        FORMAT = CONFIG.getString("format");
-        NOPERMISSION = CONFIG.getString("no-permission");
-        RELOADED = CONFIG.getString("reloaded");
-        ERROR = CONFIG.getString("error");
+        PREFIX = CONFIG.getString("prefix").replace(">>", "»").replace("<<", "«");
+        FORMAT = CONFIG.getString("format").replace(">>", "»").replace("<<", "«");
+        NOPERMISSION = CONFIG.getString("no-permission").replace(">>", "»").replace("<<", "«");
+        RELOADED = CONFIG.getString("reloaded").replace(">>", "»").replace("<<", "«");
+        ERROR = CONFIG.getString("error").replace(">>", "»").replace("<<", "«");
         BROADCAST = CONFIG.getBoolean("broadcast.enabled");
         FREQUENCY = CONFIG.getInt("broadcast.frequency");
-        BROADCAST_FORMAT = String.join("\n", CONFIG.getStringList("broadcast.format"));
+        BROADCAST_FORMAT = String.join("\n", CONFIG.getStringList("broadcast.format")).replace(">>", "»").replace("<<", "«");
         SOUND_SUCCESS = new Sound("sound-success");
         SOUND_FAILURE = new Sound("sound-failure");
     }

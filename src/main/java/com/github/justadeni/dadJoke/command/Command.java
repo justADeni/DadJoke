@@ -14,6 +14,7 @@ public class Command implements CommandExecutor {
         if (args.length > 0) {
             if (args[0].equals("reload") && sender.hasPermission("dadjoke.reload")) {
                 sender.sendMessage(Config.getInstance(true).PREFIX + Config.getInstance().RELOADED);
+                Broadcaster.broadcast(false);
                 Broadcaster.broadcast(Config.getInstance().BROADCAST);
                 Config.getInstance().SOUND_SUCCESS.play(sender);
             } else {
