@@ -22,8 +22,10 @@ public class Broadcaster {
                         return;
 
                     String joke = Client.getJoke();
-                    if (joke.isEmpty())
+                    if (joke.isEmpty()) {
+                        DadJoke.getPlugin().getLogger().info(Config.getInstance().PREFIX + Config.getInstance().ERROR);
                         return;
+                    }
 
                     String broadcast = Config.getInstance().BROADCAST_FORMAT.replace("%dadjoke%", joke);
                     Bukkit.broadcast(broadcast, "dadjoke.broadcast");
