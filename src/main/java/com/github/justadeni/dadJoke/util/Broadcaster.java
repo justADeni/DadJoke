@@ -28,7 +28,9 @@ public class Broadcaster {
                     }
 
                     String broadcast = Config.getInstance().BROADCAST_FORMAT.replace("%dadjoke%", joke);
-                    Bukkit.broadcast(broadcast, "dadjoke.broadcast");
+                    Bukkit.getOnlinePlayers().stream()
+                            .filter(player -> player.hasPermission("dadjoke.broadcast"))
+                            .forEach(player -> player.sendMessage(broadcast));
                 }
             }.runTaskTimerAsynchronously(DadJoke.getPlugin(), 0L, Config.getInstance().FREQUENCY * 1200L);
         } else {
